@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastrar</title>
+</head>
+
+<body>
+    <h1>Cadastrar Pets</h1>
+    <form method="POST" action="/cadastrar">
+        <div><label for="nome">Nome:</label>
+            <input type="text" name="nome" autofocus placeholder="Nome do pet..." />
+        </div>
+        <div><label for="especie">Especie:</label>
+            <input type="text" name="especie" autofocus placeholder="Ex.: cachorro" />
+        </div>
+        <div><label for="idade_aproximada">Idade Aproximada:</label>
+            <input type="number" name="idade_aproximada" placeholder="Ex: 2.5" />
+        </div>
+        <div> <label for="porte">Porte:</label>
+            <input type="text" name="porte" placeholder="Ex.: Pequeno" />
+        </div>
+        <div><label for="cor_predominante">Cor Predominante:</label>
+            <input type="text" name="cor_predominante" placeholder="Ex.: cinza" />
+        </div>
+        <div><label for="cor_secundaria">Cor Secundaria:</label>
+            <input type="text" name="cor_secundaria" placeholder="Ex.: preto" />
+        </div>
+        <div><input type="submit" value="Enviar" /></div>
+    </form>
+</body>
+</html>
