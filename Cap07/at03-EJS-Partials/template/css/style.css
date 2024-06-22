@@ -1,0 +1,66 @@
+* {
+    margin: 0;
+    padding: 0;
+    text-align: justify;
+    font-size: 1em;
+
+}
+
+
+.logoImg {
+    width: 11em;
+    height: 4.5em;
+}
+nav {
+    z-index: 1;
+    text-align: center;
+    align-items: center;
+    justify-content: space-between;
+    margin: -4px -2px -2px 0px;
+    padding: 10px 2px 2px 0px;
+}
+
+
+a {
+    text-decoration: none;
+}
+
+.MenuLogin {
+    right: 0;
+}
+
+
+
+.carousel-item{
+    max-width: 100%;
+    max-height: 600px;
+}
+
+
+.content {
+    position: relative;
+    top: 100px;
+    clear: both;
+}
+
+.navbar-toggler button {
+    margin: 0px auto;
+
+}
+
+
+.btn-roxo{
+    color: #FFBF00;
+    background-color: #8B278C;
+}
+.text-roxo{
+    color: #8B278C;
+
+}
+
+.login {
+    position: relative;
+    top: 100px;
+
+    clear: both;
+}

@@ -1,0 +1,17 @@
+body{
+    background: url('../img/background.jpg');
+}
+h1{
+    text-align: center;
+    color: blue;
+}
+h2{
+    text-align: center;
+    color: red;
+}
+img{
+    display: block;
+    margin:0 auto;
+    width: 800px;
+    height: 600px;
+}

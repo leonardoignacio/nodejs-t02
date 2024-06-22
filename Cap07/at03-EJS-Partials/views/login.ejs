@@ -1,0 +1,65 @@
+<%- include('./partials/head.ejs') %>
+    <title>Login-Pets</title>
+</head>
+<body>
+    <div class="container-fluid">
+        <header>
+            <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top" role="navigation">
+                <div class="container-fluid">
+                    <a class="navbar-brand" href="index.html">
+                        <img src="img/logo.png" alt="Logomarca da empresa"
+                            class="logoImg d-inline-block align-text-top">
+                    </a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuColapse"
+                        aria-controls="menuColapse" aria-expanded="true" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="menuColapse">
+                       
+                        <ul class="navbar-nav mb-2 mb-lg-0">
+                            <li class="nav-item">
+                                <a class="nav-link" href="/">Home</a>
+                            </li>
+                        </ul>
+                        <hr>
+                    </div>
+                </div>
+            </nav>
+        </header>
+    </div>
+    <hr>
+    <main>
+        <div class="container login my-5 py-5">
+            <div class="row justify-content-center">
+                <div class="col-md-4 text-center">
+                    <div class="card shadow rounded">
+                        <div class="text-center">
+                            <strong class="display-6 text-center text-roxo">Acesso <img src="img/iconLogin.svg" class="text-primary px-2 img-fluid"></img></strong>
+                        </div>
+                        <div class="card-body navddg">
+                            <form action="/login" method="POST">
+                                <div class="form-floating mb-2">
+                                    <input type="email" class="form-control" id="floatingInput" autofocus placeholder="Login">
+                                    <label for="floatingInput">Login</label>
+                                </div>
+                                <div class="form-floating">
+                                    <input type="password" class="form-control" id="floatingPassword" placeholder="Senha">
+                                    <label for="floatingPassword">Senha</label>
+                                </div>
+                                <input type="submit" href="#" class="w-100 py-2 mt-3 mb-1 btn btn-lg btn-warning">Login</a>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+  
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
