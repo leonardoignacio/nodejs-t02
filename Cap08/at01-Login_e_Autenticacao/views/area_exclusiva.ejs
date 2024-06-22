@@ -1,0 +1,68 @@
+<%- include('partials/head.ejs') %>
+    <% if (typeof dados !=='undefined' ) { %>
+        <% if (dados.autenticado!=='undefined' && dados.token!=='undefined' ) { %>
+            <script>
+                //Insere o bearer token no sessionStorage
+                const token = '<%= dados.token %>'
+                sessionStorage.setItem('Authorization', `Bearer ${token}`)
+            </script>
+            <% }} %>
+                <title>Área Restrita - Amigo do Pet</title>
+                </head>
+
+                <body>
+                    <div class="container-fluid">
+                        <!-- navbar -->
+                        <%- include('partials/menu.ejs') %>
+                    </div>
+                    <br>
+                    <!-- Formulario Login -->
+                    <main>
+                        <div class="card mt-5" id="panel-tab">
+                            <div class="mb-3 card-body">
+                                <div class="bg-light m-auto w-100 d-block">
+                                    <ul class="nav nav-tabs" id="myTab" role="tablist">
+                                        <li class="nav-item" role="presentation">
+                                            <button class="nav-link active" id="perfil-tab" data-bs-toggle="tab"
+                                                data-bs-target="#perfil-pane" type="button" role="tab"
+                                                aria-controls="perfil-pane" aria-selected="true">
+                                                <small class="fs-6">Meu Perfil</small></button>
+                                        </li>
+                                        <li class="nav-item" role="presentation">
+                                            <button class="nav-link" id="pets-tab" data-bs-toggle="tab"
+                                                data-bs-target="#pets-pane" type="button" role="tab"
+                                                aria-controls="pets-pane" aria-selected="false">
+                                                <small class="fs-6">Meus Pets</small></button>
+                                        </li>
+                                        <li class="nav-item" role="presentation">
+                                            <button class="nav-link" id="interesse-tab" data-bs-toggle="tab"
+                                                data-bs-target="#interesse-pane" type="button" role="tab"
+                                                aria-controls="interesse-pane" aria-selected="false">
+                                                <small class="fs-6">Meus Interesses</small></button>
+                                        </li>
+                                    </ul>
+                                    <div class="tab-content" id="myTabContent">
+                                        <div class="tab-pane fade show active" id="perfil-pane" role="tabpanel"
+                                            aria-labelledby="perfil-tab" tabindex="0">
+                                            <p>Perfil</p>
+                                        </div>
+                                        <div class="tab-pane fade show" id="pets-pane" role="tabpanel"
+                                            aria-labelledby="pets-tab" tabindex="1">
+                                            <p>Pets</p>
+                                        </div>
+                                        <div class="tab-pane fade" id="interesse-pane" role="tabpanel"
+                                            aria-labelledby="interesse-tab" tabindex="2">
+                                            <p>Interesses</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </main>
+                    <%- include('partials/footer.ejs') %>
+                        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+                            integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+                            crossorigin="anonymous"></script>
+                </body>
+
+                </html>

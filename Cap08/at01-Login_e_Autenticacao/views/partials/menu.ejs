@@ -1,0 +1,69 @@
+<div class="container-fluid">
+    <nav class="row navbar navbar-expand-lg navbar-light bg-light fixed-top clearfix" role="navigation">
+        <div class="col-sm-12 col-md-12 col-lg-2">
+            <div class="row">
+                <div class="col-sm-6 col-md-10 col-lg-12 mx-auto" style="max-width: 200px;">
+                    <a class="navbar-brand" href="/">
+                        <img src="img/logo.png" alt="Logomarca da empresa" class="logoImg img-fluid align-text-center">
+                    </a>
+                </div>
+                <div class="col-sm-2 col-md-2 col-lg-0 my-auto py-2" style="max-width: 100px;">
+                    <div class="mx-auto">
+                        <button id="btnToggleMenu" class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#menuColapse" aria-controls="menuColapse" aria-expanded="true"
+                            aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-12 col-md-12 col-lg-10">
+            <div class="container">
+                <div class="collapse navbar-collapse" id="menuColapse">
+                    <ul id="listaMenu" class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a href="/" class="nav-link clearfix fs-5 text-warning" onclick="toggleMenu()">HOME</a>
+                        </li>
+                    </ul>
+                    <ul class="navbar-nav mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a id="menuLogin" class="nav-link fs-5 text-warning" aria-current="page"
+                                onclick="excluirtoken()"></img></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <hr>
+</div>
+<script>
+    let menuLogin = document.getElementById('menuLogin')
+    let listaMenu = document.getElementById('listaMenu')
+    let logado = false
+    if (sessionStorage.getItem('Authorization')) {
+        menuLogin.innerHTML = 'Sair <img src="img/iconLogin.svg" class="px-2 img-fluid"></img>'
+        logado = true
+        menuLogin.href = '/'
+        let li = document.createElement('li')
+        li.classList.add('nav-item')
+        let a = document.createElement('a')
+        a.classList.add('nav-link', 'clearfix', 'fs-5', 'text-warning')
+        a.href = '/area-exclusiva'
+        a.innerHTML = 'AREA EXCLUSIVA'
+        li.appendChild(a)
+        listaMenu.appendChild(li)
+
+    } else {
+        menuLogin.innerHTML = 'Login<img src="img/iconLogin.svg" class="px-2 img-fluid">'
+        menuLogin.href = '/login'
+    }
+    var excluirtoken = () => {
+        if (logado) {
+            sessionStorage.removeItem('Authorization')
+            document.cookie = `Authorization=; maxAge:-1; path=/;`
+            logado = false
+        }
+    }
+</script>

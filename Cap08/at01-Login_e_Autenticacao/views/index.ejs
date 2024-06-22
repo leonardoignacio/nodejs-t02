@@ -1,0 +1,49 @@
+<%- include('partials/head.ejs') %>
+    <title>Home</title>
+</head>
+
+<body>
+    <div class="container-fluid"></div><!-- main container-fluid -->
+        
+        <!-- Menu -->
+        <%- include('partials/menu.ejs') %>
+        <!-- Carousel -->
+        <%- include('partials/carousel.ejs') %>
+        
+        
+        <!-- Inicio do conteúdo -->
+        <div class="container-fluid bg-light mt-2">
+            <div class="py-2 mx-auto bg-warning">
+                <hr>
+                <h2 class="dysplay-2 text-align-justify text-center text-break text-light">Encontre um amigo!!!</h2>
+                <hr>
+            </div>         
+            
+            <div class="pt-3 container"><!--Div de Itens - Conteúdo-->
+                <div class="row"> <!-- Linha de conteúdo -->
+
+                    <% dados.forEach((pet)=>{ %>
+                        <div class="col-md-4 col-sm-12 mb-3"> <!-- 1º item de conteúdo --> 
+                            <div class="card shadow rounded">
+                            <img src="img/petDefault.jpg" class="card-img-top img-fluid" alt="...">
+                            <div class="card-body">
+                                <h3 class="card-title display-5 fs-2"><strong><%= pet.nome %></strong></h5>
+                                <strong class="card-text text-break fs-4"><%= pet.especie %></strong>
+                                <p class="card-text text-break fs-5"><strong>Idade: </strong><small><%= pet.idade %></small></p>
+                                <p class="card-text fs-5"><strong> Obs: </strong><small><%= pet.obs %></small></p>
+                                <a href="#" class="btn btn-roxo py-3 fs-5"><strong>Registrar Interesse</strong></a>
+                            </div>
+                            </div>
+                        </div> <!--Fim 1º item de conteúdo -->
+                    
+                    <% }) %>
+                    
+                </div> <!-- Fim linha de conteúdo -->
+            </div><!-- Fim itens de conteúdo -->
+        </div> <!--Fim Container conteúdo-->
+    </div><!-- Fim do main container-fluid -->
+    
+    <!-- Rodapé-->
+    <%- include('partials/footer.ejs') %>
+
+    
